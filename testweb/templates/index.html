@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询作业完成人数</title>
+
+</head>
+<body style="background: lightsteelblue">
+<form action="/index/" method="post">
+    <p>
+        <label for="username">账号：</label>
+        <input id="username" name="user" type="text"/>
+        <label for="password">密码：</label>
+        <input id="password" name="pwd" type="password"/>
+        {% csrf_token %}
+        <input type="submit" value="登录"/>
+    </p>
+</form>
+
+<h1>{{form}}</h1>
+
+
+{% if datetime.message == "登录成功！已获得token！" %}
+
+{% for i in datetime.LessonList %}
+<p align="center" style="font-size: 20px;">{{i.lessonName}}提交作业人数为：{{i.ok_number}}</p>
+{% endfor %}
+<p align="center" style="color: red;font-size: 60px;"> 共完成：{{datetime.ok_homeword_number}}</p>
+<p align="center" style="color: coral; font-size: 37px;">PythonL1 C++ 等课程不在统计范围之内！！！</p>
+{% else %}
+<p>{{datetime.message}}</p>
+{% endif %}
+<p align="center"><a href="/homeword" style="font-size: 40px;"> 陈泽南作业跳转！</a></p>
+
+
+</body>
+</html>

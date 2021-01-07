@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>陈泽南回家作业</title>
+</head>
+<body>
+<form action="/homeword/" method="post">
+    {% csrf_token %}
+    <textarea style="width: 100%;height: 700px" name="answer">- 单选题
+
+   1、关于os模块，下列说法错误的是：
+
+
+  A、os是Operating System（操作系统）的缩写
+  B、os是用于访问操作系统功能的模块
+  C、os模块提供了众多与处理文件与文件夹相关的函数方法
+  D、os模块是第三方模块，在使用之前需要用pip install os命令下载
+
+
+  2、已知素材文件夹的路径是：C:\Users\xxxxx\Desktop\素材，如果想要获取这个文件夹中的所有文件或文件夹，并把它们保存在一个列表中，可以使用下列哪个程序呢？
+
+
+  A、
+  import os
+  items = listdir("C:\Users\xxxxx\Desktop\素材")
+  print(items)
+  B、
+  import os
+  items = os.listdir("C:\Users\xxxxx\Desktop\素材")
+  print(items)
+  C、
+  import os
+  items = os.listdir("C:/Users/xxxxx/Desktop/素材")
+  print(items)
+  D、
+  import os
+  items = os.listdir(C:/Users/xxxxx/Desktop/素材)
+  print(items)
+
+
+  3、如果想要判断一个对象是不是文件夹，可以用下列哪个方法？
+
+
+  A、os.path.isdir()
+  B、os.isdir()
+  C、os.path()
+  D、os.listdir()
+
+
+  4、关于递归，下列说法错误的是：
+
+
+  A、递归是一种算法，被广泛用于程序设计中
+  B、递归是在函数的定义中，函数内部的语句调用函数本身
+  C、通俗点说，递归就是在函数内部调用自己的函数
+  D、递归不需要在函数内部调用函数本身
+
+
+- 多选题
+
+  1、杀毒软件是一种可以对病毒、木马等一切已知的对计算机有危害的程序代码进行清除的程序工具。“杀毒软件”是由国内的老一辈反病毒软件厂商起的名字，后来由于国内和世界反病毒业接轨，这类软件又被统称为“反病毒软件”、“安全防护软件”或“安全软件”。“反病毒软件”在杀毒时的任务有两个，分别是哪两个？
+
+
+  A、实时监控
+  B、脱壳技术
+  C、主动防御技术
+  D、磁盘扫描
+
+
+  2、已知名为“素材”的文件夹的路径是：C:\Users\xxxxx\Desktop\素材，这个文件夹中有名为“第18课”，“第19课”的两个文件。如果想要用程序来判断“素材”是不是文件夹，下列的程序及结果错误的是：
+
+
+  A、
+  import os
+  a = os.path.isdir(素材)
+  print(a)
+  >>>True
+  B、
+  imort os
+  a = os.path.isdir("C:/Users/xxxxx/Desktop/素材")
+  print(a)
+  >>>True
+  C、
+  import os
+  a = os.path.isdir()
+  print(a)
+  >>>True
+  D、
+  import os
+  a =  os.path.isdir("C:/Users/xxxxx/Desktop/素材")
+  print(a)
+  >>>["第18课","第19课"]
+
+
+  3、关于os.getcwd()，下列说法正确的是：
+
+
+  A、os.getcwd()的作用是获取当前文件所在文件夹的路径
+  B、os.getcwd()的作用是获取当前文件所在文件夹的名称
+  C、os.getcwd()的参数是当前文件的路径
+  D、os.getcwd()没有参数
+
+
+- 判断题
+
+  1、os.listdir()方法可以返回指定文件夹中包含的所有文件或文件夹的路径，并储存在列表中。
+
+
+
+  2、递归通常可以将一个大型复杂的问题层层转化为一个个与原问题相似的规模较小的问题来求解。
+
+
+
+- 创作题
+
+  1、了解雪花是怎么形成的，科赫雪花又是什么？
+
+</textarea>
+    <input type="submit" value="提交"/>
+</form>
+
+
+</body>
+</html>

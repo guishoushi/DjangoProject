@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% extends 'index_test.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作业 列表</title>
+</head>
+<body>
+
+<div class="column is-12 is-vcentered">
+    <hr>
+
+    <div id="id-vmess-node-list">
+        <div class="node-cell" data-id="238f46bf-f556-4999-9e29-e0a76c21d853">
+            <div class="card">
+                {% for t in title %}
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href=/homeword/{{t}}>{{ t }}</a>
+                        &nbsp;
+                    </p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+</div>
+
+
+
+</body>
+{% endblock %}
+</html>

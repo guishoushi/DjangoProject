@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <title>登录 界面</title>
+    <title>注册用户</title>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,9 +58,9 @@
 <section class="hero is-small is-info">
     <div class="hero-body">
         <div class="container has-text-centered">
-            <h1 class="title">登录界面</h1>
+            <h1 class="title">注册 用户</h1>
             <h2 class="subtitle">
-                登录界面
+                注册 界面
             </h2>
         </div>
     </div>
@@ -115,10 +115,10 @@
                     <div class="hero-body">
                         <div class="container">
                             <h1 class="title">
-                                登录界面：
+                                注册界面：
                             </h1>
                             <h2 class="subtitle">
-                                请问需要加点咖啡吗？
+                                开放注册中
                             </h2>
                         </div>
                     </div>
@@ -126,32 +126,34 @@
             </div>
             <div class="column is-12">
                 <div class="box">
-                    <h3 class="title">登录:</h3>
-                    <form class="form" action="/login/" method="post">
+                    <h3 class="title">注册:</h3>
+                    <form class="form" action="/register/" method="post">
                         <input type="hidden" name="csrfmiddlewaretoken"
-                               value="psaGKyqhhcLUjcW57zJVWlMtbfnpkADedBpxQ7iUnd8DT5zeQ83yOp9HIj2qstBQ"> <label
-                            for="id_username">用户名:</label> <input type="text" name="username" class="input is-primary"
-                                                                  placeholder="用户名" required id="id_username">
+                               value="QpQJSY7Ve8Bbt7Gw6rQG2poNr5SKd75YEy5AYxZyk9YU30jFP0ajUtL1Y9xLl03A">
+                        用户名
+                        <input type="text" name="username" class="input is-info" autofocus required id="id_username">
                         <p style="color: red">{{is_username}}</p>
-                        <label for="id_password">密码:</label> <input type="password" name="password"
-                                                                    class="input is-primary" placeholder="密码" required
-                                                                    id="id_password">
-                        <p style="color: red">{{is_password}}</p>
+                        邮箱
+                        <input type="text" name="email" class="input is-warning" required id="id_email">
 
+                        密码
+                        <input type="password" name="password1" class="input is-primary" required id="id_password1">
+                        <p class="help is-danger"></p>
+                        重复密码
+                        <input type="password" name="password2" class="input is-danger" required id="id_password2">
+                        <p style="color: red">{{pwd_error}}</p>
+                        {{form.errors.email}}
 
+                        <p style="color: #03a9f4;font-size: 30px;">{{status}}</p>
                         <hr>
                         <div class="field is-grouped is-grouped-multiline">
                             <p class="control">
-                                <button type="submit" class="button is-primary is-outlined">登录！</button>
+                                <button type="submit" class="button is-primary is-outlined">注册吧少年！</button>
                             </p>
                             <p class="control">
-                                <a class="button is-info is-outlined " href="/accounts/password_reset/">忘记密码？</a>
-                            </p>
-                            <p class="control">
-                                <a type="submit" class="button is-primary is-outlined" href="/register">注册账户？</a>
+                                <a class="button is-info is-outlined " href="/login/">刚注册过了？</a>
                             </p>
                         </div>
-
                     </form>
                 </div>
             </div>

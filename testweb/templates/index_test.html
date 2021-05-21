@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <title>一个小网站</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/static/logo.ico" type="image/x-icon"/>
+
+    <link rel="stylesheet" href="https://cdn.staticfile.org/bulma/0.9.0/css/bulma.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/sspanel.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/flag-icon-css/3.5.0/css/flag-icon.min.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.14.0/css/all.min.css" rel="stylesheet">
+    <link crossorigin="anonymous" integrity="sha384-rQdIropf4eQBEB9SkNB4xxukYHlkyXJfKYkpVNUQOLizz+d2q0wo7zjVA2XcYSij"
+          href="https://lib.baomitu.com/simplemde/latest/simplemde.min.css" rel="stylesheet">
+
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/sweetalert.min.js"></script>
+    <script src="/static/js/chart.min.js"></script>
+    <script src="/static/js/clipboard.min.js"></script>
+    <script src="/static/js/jquery.qrcode.min.js"></script>
+    <script src="/static/js/sspanel.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-83rBTICYr+FwAC+A5t0ZYsWjTcPXibCe/NBSFLAgMPkwHBvIi02EcE9OShMsGCi3"
+            src="/static/js/simplemde.min.js"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179980882-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-179980882-1');
+    </script>
+</head>
+<body>
+<nav class="navbar is-info is-spaced">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <img src="/static/images/logo.png" alt="BuLink" width="87" height="26">
+        </a>
+        <div class="navbar-burger burger" data-target="navMenuColorprimary-example">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div id="navMenuColorprimary-example" class="navbar-menu">
+        <div class="navbar-end">
+            <a class="navbar-item" href="/">首页</a>
+            <a class="navbar-item" href="/help/">使用说明</a>
+            <div class="navbar-item has-dropdown is-hoverable is-hidden-mobile">
+<span class="navbar-item">
+<a class="button is-info is-inverted" href="/users/userinfo/">
+<span class="icon">
+<i class="fa fa-user-circle"></i>
+</span>
+    {% if request.session.name %}
+<span>{{ request.session.name }}</span>
+    {% endif %}
+</a>
+</span>
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="/users/userinfo/">
+<span class="icon">
+<i class="fa fa-users"></i>
+</span>
+                        <span>用户中心</span>
+                    </a>
+                    <hr class="navbar-divider">
+                    <a class="navbar-item" href="/logout/">
+<span class="icon">
+<i class="fa fa-sign-out"></i>
+</span>
+                        <span>注销登录</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="is-hidden-tablet">
+                <a class="navbar-item is-active">我的信息</a>
+                <a class="navbar-item" href="/users/userinfo/">用户中心</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<section class="hero is-small is-info">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <h1 class="title"> 一个小网站 </h1>
+            <h2 class="subtitle">
+                你好，{{ request.session.name}}
+            </h2>
+        </div>
+    </div>
+</section>
+<hr>
+<div class="container">
+    <div class="columns">
+        <div class="column is-2 is-hidden-mobile">
+            <div class="box">
+                <aside class="menu">
+                    <p class="menu-label">
+                        我的信息：
+                    </p>
+                    <ul class="menu-list">
+                        <li>
+                            <a class="" href="/users/userinfo/">用户中心</a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+        {% block content %}
+
+        <div class="column is-10">
+            <div class="column is-12">
+                <section class="hero is-success is-smaill">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 class="title">
+                                功能列表：
+                            </h1>
+                            <h2 class="subtitle">
+                                啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊。
+                            </h2>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="column is-12 is-vcentered">
+                <hr>
+                <div id="id-vmess-node-list">
+                    <div class="node-cell" data-id="238f46bf-f556-4999-9e29-e0a76c21d853">
+                        <div class="card">
+                            <div class="card-header">
+                                <p class="card-header-title">
+                                    <a href="/homeword-L2">Python L2 作业查看列表</a>
+                                    &nbsp;
+                                </p>
+                            </div>
+                            <div class="card-header">
+                                <p class="card-header-title">
+                                    <a href="/homeword-L3">Python L3 作业查看列表</a>
+                                    &nbsp;
+                                </p>
+                            </div>
+                            <div class="card-header">
+                                <p class="card-header-title">
+                                    <a href="/download"> 文件下载列表 </a>
+                                </p>
+                            </div>
+                            <div class="card-header">
+                                <p class="card-header-title">
+                                    <a href="/words_number"> 作业完成情况查询 </a>
+                                </p>
+                            </div>
+                            <div class="card-header">
+                                <p class="card-header-title">
+                                    <a href="/wechat"> 修改微信步数 </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+            </div>
+        </div>
+        <script>
+
+            function toUtf8(str) {
+                var out, i, len, c;
+                out = "";
+                len = str.length;
+                for (i = 0; i < len; i++) {
+                    c = str.charCodeAt(i);
+                    if ((c >= 0x0001) && (c <= 0x007F)) {
+                        out += str.charAt(i);
+                    } else if (c > 0x07FF) {
+                        out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));
+                        out += String.fromCharCode(0x80 | ((c >> 6) & 0x3F));
+                        out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+                    } else {
+                        out += String.fromCharCode(0xC0 | ((c >> 6) & 0x1F));
+                        out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+                    }
+                }
+                return out;
+            }
+
+            var SSNodeList = $("#id-ss-node-list")
+            // 事件委托绑定按钮
+            SSNodeList.on('click', 'a', function (event) {
+                var target = $(event.target)
+                var node = target.closest('.node-cell')
+                // 找到节点id
+                var node_id = node.data('id')
+                node.find(`.qr-code-ss-${node_id}`).each(function (idx, ss) {
+                    ss = $(ss)
+                    if (ss.children().length == 0) {
+                        ss.qrcode(toUtf8(ss.data("ss_link")))
+                    }
+                })
+            })
+
+            var VmessNodeList = $("#id-vmess-node-list")
+            // 事件委托绑定按钮
+            VmessNodeList.on('click', 'a', function (event) {
+                var target = $(event.target)
+                var node = target.closest('.node-cell')
+                // 找到节点id
+                var node_id = node.data('id')
+                node.find(`.qr-code-vmess-${node_id}`).each(function (idx, vmess) {
+                    vmess = $(vmess)
+                    if (vmess.children().length == 0) {
+                        vmess.qrcode(toUtf8(vmess.data("vmess_link")))
+                    }
+                })
+            })
+        </script>
+    </div>
+</div>
+<footer>
+    <div class="container">
+        <div class="content has-text-centered">
+            <p>
+            <p class="copyright">&copy; 2020·
+                <a href="/index">网站模板</a>
+            </p>
+            </p>
+        </div>
+    </div>
+</footer>
+</body>
+{% endblock %}
+</html>

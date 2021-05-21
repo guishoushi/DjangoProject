@@ -16,15 +16,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from nihao import views
-from testweb import settings
-import re
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', views.index),
-    path('login/', views.login),
+    path('login/', views.user_login),
     path('', views.home),
-    path('homeword/', views.homeword),
+    path('homeword-L2/', views.homeword_list),
+    path('homeword/<title>', views.homeword),
+    path('download/<id>', views.download_file),
+    path('download/', views.download),
+    path('register/', views.register),
+    path('userinfo/', views.userinfo),
+    path('logout/', views.logout),
+    path('test/',views.test),
+    path('words_number/',views.words_number),
+    path('wechat/',views.wechat),
+    path('homeword-L3/',views.homewordL3),
+    path('api/',views.api)
 
 ]
-

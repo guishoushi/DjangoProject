@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>用户 中心</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/static/img/logo/logo.ico" type="image/x-icon"/>
+
+    <link rel="stylesheet" href="https://cdn.staticfile.org/bulma/0.9.0/css/bulma.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/sspanel/css/sspanel.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/flag-icon-css/3.5.0/css/flag-icon.min.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.14.0/css/all.min.css" rel="stylesheet">
+    <link crossorigin="anonymous" integrity="sha384-rQdIropf4eQBEB9SkNB4xxukYHlkyXJfKYkpVNUQOLizz+d2q0wo7zjVA2XcYSij"
+          href="https://lib.baomitu.com/simplemde/latest/simplemde.min.css" rel="stylesheet">
+
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/sweetalert.min.js"></script>
+    <script src="/static/js/chart.min.js"></script>
+    <script src="/static/js/clipboard.min.js"></script>
+    <script src="/static/js/jquery.qrcode.min.js"></script>
+    <script src="/static/js/sspanel.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-83rBTICYr+FwAC+A5t0ZYsWjTcPXibCe/NBSFLAgMPkwHBvIi02EcE9OShMsGCi3"
+            src="/static/js/simplemde.min.js"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179980882-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-179980882-1');
+    </script>
+</head>
+<body>
+<nav class="navbar is-info is-spaced">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <img src="/static/images/logo.png" alt="BuLink" width="87" height="26">
+        </a>
+        <div class="navbar-burger burger" data-target="navMenuColorprimary-example">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div id="navMenuColorprimary-example" class="navbar-menu">
+        <div class="navbar-end">
+            <a class="navbar-item" href="/">首页</a>
+            <a class="navbar-item" href="/help/">使用说明</a>
+            <div class="navbar-item has-dropdown is-hoverable is-hidden-mobile">
+<span class="navbar-item">
+<a class="button is-info is-inverted" href="/userinfo">
+<span class="icon">
+<i class="fa fa-user-circle"></i>
+</span>
+<span>鬼守尸</span>
+</a>
+</span>
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="/userinfo/">
+<span class="icon">
+<i class="fa fa-users"></i>
+</span>
+                        <span>用户中心</span>
+                    </a>
+                    <hr class="navbar-divider">
+                    <a class="navbar-item" href="/logout/">
+<span class="icon">
+<i class="fa fa-sign-out"></i>
+</span>
+                        <span>注销登录</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="is-hidden-tablet">
+                <a class="navbar-item is-active">我的信息</a>
+                <a class="navbar-item" href="/users/userinfo/">用户中心</a>
+                <a class="navbar-item" href="/announcement/">查看公告</a>
+                <a class="navbar-item" href="/tickets/">联系站长</a>
+                <a class="navbar-item is-active">节点相关</a>
+                <a class="navbar-item" href="/nodeinfo/">节点信息</a>
+                <a class="navbar-item" href="/user_traffic_log/">流量记录</a>
+                <a class="navbar-item is-active">交易相关</a>
+                <a class="navbar-item" href="/donate/">捐赠付费</a>
+                <a class="navbar-item" href="/chargecenter/">充值界面</a>
+                <a class="navbar-item" href="/shop/">商品界面</a>
+                <a class="navbar-item" href="/purchaselog/">购买记录</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<section class="hero is-small is-info">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <h1 class="title">闪烁科技 网络加速</h1>
+            <h2 class="subtitle">
+                永久免费网络加速服务 免费资源请勿用于非法用途
+            </h2>
+        </div>
+    </div>
+</section>
+<hr>
+<div class="container">
+    <div class="columns">
+        <div class="column is-2 is-hidden-mobile">
+            <div class="box">
+                <aside class="menu">
+                    <p class="menu-label">
+                        我的信息：
+                    </p>
+                    <ul class="menu-list">
+                        <li>
+                            <a class="" href="/users/userinfo/">用户中心</a>
+                        </li>
+                        <li>
+                            <a href="/announcement/">查看公告</a>
+                        </li>
+                        <li>
+                            <a href="/tickets/">联系站长</a>
+                        </li>
+                    </ul>
+                    <p class="menu-label">
+                        节点相关
+                    </p>
+                    <ul class="menu-list">
+                        <li>
+                            <a href="/nodeinfo/">节点信息</a>
+                        </li>
+                        <li>
+                            <a href="/user_traffic_log/">流量记录</a>
+                        </li>
+                    </ul>
+                    <p class="menu-label">
+                        交易相关
+                    </p>
+                    <ul class="menu-list">
+                        <li>
+                            <a href="/donate/">捐赠付费</a>
+                        </li>
+                        <li>
+                            <a href="/chargecenter/">充值界面</a>
+                        </li>
+                        <li>
+                            <a href="/shop/">商品界面</a>
+                        </li>
+                        <li>
+                            <a href="/purchaselog/">购买记录</a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+        <div class="column is-10">
+            <div class="column is-12">
+                <section class="hero is-primary is-smaill">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 class="title">
+                                用户中心：
+                            </h1>
+                            <h2 class="subtitle">
+                                这里有你的出生证明....
+                            </h2>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="column is-12">
+                <div class="tile is-ancestor">
+                    <div class="tile is-5 is-vertical is-parent">
+                        <div class="tile box is-child">
+                            <p class="title">
+<span class="icon is-large">
+<i class="fa fa-home"></i>
+</span> 欢迎小主: 鬼守尸</p>
+                            <button class="button is-rounded">
+                                <a href="/logout/">注销登录</a>
+                            </button>
+                            <button class="button is-rounded">
+                                <a href="/accounts/password_change/">修改密码</a>
+                            </button>
+                            <hr>
+                            <div class="field is-grouped is-grouped-multiline">
+                                <div class="control has-icons-left">
+                                    <div class="select is-rounded is-fullwidth is-info ">
+                                        <select name="selects">
+                                            <option value="" disabled="" selected="">更换页面主题</option>
+                                            <option disabled="">───</option>
+                                            <option value="default">default</option>
+                                            <option value="darkly">darkly</option>
+                                            <option value="flatly">flatly</option>
+                                            <option value="journal">journal</option>
+                                            <option value="materia">materia</option>
+                                            <option value="minty">minty</option>
+                                            <option value="spacelab">spacelab</option>
+                                            <option value="superhero">superhero</option>
+                                        </select>
+                                    </div>
+                                    <div class="icon is-small is-left">
+                                        <i class="fa fa-torah"></i>
+                                    </div>
+                                </div>
+                                <p class="control">
+                                    <button class="button is-outlined is-info is-rounded" id="id-button-theme">提交
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tile box is-child">
+                            <article class="message">
+                                <div class="message-header">
+                                    <p>最新公告</p>
+                                </div>
+                                <div class="message-body">
+                                    <p>开始自建节点，为避免滥用，保持让更多人免费长久使用的初心，限账号月流量5G(部分节点计流量0.5倍)。</p>
+                                    <p>有任何问题欢迎联系我提工单，虽然可能回复较慢，但我都会看的。</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="tile is-7 is-vertical is-parent">
+                        <div class="tile box is-child">
+                            <article class="message is-success">
+                                <div class="message-header">
+                                    <p>连接信息</p>
+                                </div>
+                                <div class="message-body">
+                                    <div class="buttons">
+                                        <span class="button is-link modal-button is-rounded" data-target="modal-sub">订阅地址</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <div class="modal nodeinfo" id="modal-sub">
+                                <div class="modal-background"></div>
+                                <div class="modal-card">
+                                    <header class="modal-card-head">
+                                        <p class="modal-card-title">订阅地址：</p>
+                                        <button class="delete"></button>
+                                    </header>
+                                    <section class="modal-card-body">
+                                        <p class="subtitle">订阅SSR</p>
+                                        <div class="field is-grouped is-grouped-multiline">
+                                            <p class="control is-expanded">
+                                                <input class="input" id="id-sub-link-ss"
+                                                       value="https://bulink.xyz/api/sub/?token=gyjuzm&sub_type=ssr"
+                                                       readonly>
+                                            </p>
+                                            <p class="control">
+                                                <a class="button is-rounded" id="id-button-clip"
+                                                   data-clipboard-target="#id-sub-link-ss">
+                                                    <i class="fa fa-clipboard" aria-hidden="true"></i>
+                                                </a>
+                                            </p>
+                                        </div>
+                                        <hr>
+                                        <p class="subtitle">订阅Vmess(含SS/Trojan)</p>
+                                        <div class="field is-grouped is-grouped-multiline">
+                                            <p class="control is-expanded">
+                                                <input class="input" id="id-sub-link-vmess"
+                                                       value="https://bulink.xyz/api/sub/?token=gyjuzm&sub_type=vmess"
+                                                       readonly>
+                                            </p>
+                                            <p class="control">
+                                                <a class="button is-rounded" id="id-button-clip"
+                                                   data-clipboard-target="#id-sub-link-vmess">
+                                                    <i class="fa fa-clipboard" aria-hidden="true"></i>
+                                                </a>
+                                            </p>
+                                        </div>
+                                        <hr>
+                                        <p class="subtitle">订阅Clash</p>
+                                        <div class="field is-grouped is-grouped-multiline">
+                                            <p class="control is-expanded">
+                                                <input class="input" id="id-sub-link-clash"
+                                                       value="https://bulink.xyz/api/sub/?token=gyjuzm&sub_type=clash"
+                                                       readonly>
+                                            </p>
+                                            <p class="control">
+                                                <a class="button is-rounded" id="id-button-clip"
+                                                   data-clipboard-target="#id-sub-link-clash">
+                                                    <i class="fa fa-clipboard" aria-hidden="true"></i>
+                                                </a>
+                                            </p>
+                                        </div>
+                                        <hr>
+                                        <p class="subtitle">只订阅Vmess</p>
+                                        <div class="field is-grouped is-grouped-multiline">
+                                            <p class="control is-expanded">
+                                                <input class="input" id="id-sub-link-only"
+                                                       value="https://bulink.xyz/api/sub/?token=gyjuzm&sub_type=only"
+                                                       readonly>
+                                            </p>
+                                            <p class="control">
+                                                <a class="button is-rounded" id="id-button-clip"
+                                                   data-clipboard-target="#id-sub-link-only">
+                                                    <i class="fa fa-clipboard" aria-hidden="true"></i>
+                                                </a>
+                                            </p>
+                                        </div>
+                                        <hr>
+                                        <p class="subtitle">只订阅ss</p>
+                                        <div class="field is-grouped is-grouped-multiline">
+                                            <p class="control is-expanded">
+                                                <input class="input" id="id-sub-link-onlyss"
+                                                       value="https://bulink.xyz/api/sub/?token=gyjuzm&sub_type=ss"
+                                                       readonly>
+                                            </p>
+                                            <p class="control">
+                                                <a class="button is-rounded" id="id-button-clip"
+                                                   data-clipboard-target="#id-sub-link-onlyss">
+                                                    <i class="fa fa-clipboard" aria-hidden="true"></i>
+                                                </a>
+                                            </p>
+                                        </div>
+                                        <hr>
+                                        <p class="subtitle">只订阅trojan</p>
+                                        <div class="field is-grouped is-grouped-multiline">
+                                            <p class="control is-expanded">
+                                                <input class="input" id="id-sub-link-tr"
+                                                       value="https://bulink.xyz/api/sub/?token=gyjuzm&sub_type=tr"
+                                                       readonly>
+                                            </p>
+                                            <p class="control">
+                                                <a class="button is-rounded" id="id-button-clip"
+                                                   data-clipboard-target="#id-sub-link-tr">
+                                                    <i class="fa fa-clipboard" aria-hidden="true"></i>
+                                                </a>
+                                            </p>
+                                        </div>
+                                        <hr>
+                                        <span class="copied" hidden="true">Copied!</span>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="modal nodeinfo" id="modal-sub-vip">
+                                <div class="modal-background"></div>
+                                <div class="modal-card">
+                                    <header class="modal-card-head">
+                                        <p class="modal-card-title">订阅地址：</p>
+                                        <button class="delete"></button>
+                                    </header>
+                                    <section class="modal-card-body">
+                                        <p class="subtitle">订阅VIP-Vmess(当前付费订阅只支持Vmess)</p>
+                                        <div class="field is-grouped is-grouped-multiline">
+                                            <p class="control is-expanded">
+                                                <input class="input" id="id-sub-link-vip"
+                                                       value="https://bulink.xyz/api/sub/?token=gyjuzm" readonly>
+                                            </p>
+                                            <p class="control">
+                                                <a class="button is-rounded" id="id-button-clip"
+                                                   data-clipboard-target="#id-sub-link-vmess">
+                                                    <i class="fa fa-clipboard" aria-hidden="true"></i>
+                                                </a>
+                                            </p>
+                                        </div>
+                                        <span class="copied" hidden="true">Copied!</span>
+                                    </section>
+                                </div>
+                            </div>
+                            <article class="message is-warning">
+                                <div class="message-header">
+                                    <p>流量信息(只计自建节点)</p>
+                                </div>
+                                <div class="message-body">
+                                    <div class="columns">
+                                        <div class="column">
+                                            <li>总量:
+                                                <code>5.0GB</code>
+                                            </li>
+                                        </div>
+                                        <div class="column">
+                                            <progress class="progress is-success" value="100" max="100"></progress>
+                                        </div>
+                                    </div>
+                                    <div class="columns">
+                                        <div class="column">
+                                            <li>剩余:
+                                                <code>5.0GB </code>
+                                            </li>
+                                        </div>
+                                        <div class="column">
+                                            <progress class="progress is-info" value="100.0" max="100"></progress>
+                                        </div>
+                                    </div>
+                                    <div class="columns">
+                                        <div class="column">
+                                            <li>使用:
+                                                <code>0B</code></li>
+                                        </div>
+                                        <div class="column">
+                                            <progress class="progress is-danger" value="0.0" max="100"></progress>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="message is-info">
+                                <div class="message-header">
+                                    <p>个人信息</p>
+                                </div>
+                                <div class="message-body">
+                                    <li> 余额：
+                                        <code>0.00 元</code>
+                                    </li>
+                                    <li> 邮箱：
+                                        <code><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                                 data-cfemail="7d1a08140e1512080e15144c4f4b3d4c4f4b531e1210">[email&#160;protected]</a>
+                                        </code>
+                                    </li>
+                                    <li> 等级：
+                                        <code>1 级 </code>
+                                    </li>
+                                    <li> 状态：
+                                        <code>正常使用</code>
+                                    </li>
+                                    <li> 主题：
+                                        <code>default </code>
+                                    </li>
+                                    <li> 等级到期时间：
+                                        <code>2099年12月31日 23:59 </code>
+                                    </li>
+                                    <li>上次使用时间:
+                                        <code>None</code>
+                                    </li>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script data-cfasync="false" src="/static/js/email-decode.min.js"></script>
+            <script>
+                // 点击复制
+                var clip = new Clipboard('#id-button-clip');
+                clip.on('success', function (e) {
+                    $('.copied').show();
+                    $('.copied').fadeOut(1000);
+                });
+
+                // 端口重置
+                var ProtButton = $("#id-change-port")
+                var changeport = function () {
+                    url = "/api/reset_ss_port/"
+                    data = {
+                        csrfmiddlewaretoken: 'lenOGJ6masasEYcX3LMo6Jt7l2fRwdqyzk0nbpXw8HroTQBqjt5GIeT92Hs6SbaN',
+                    }
+                    $.post(url, data, function (results) {
+                        swal(results.title, results.subtitle, results.status)
+                        port.textContent = results.subtitle.slice(6, -1)
+                    })
+                }
+                ProtButton.click(changeport)
+
+                // 签到
+                var CheckButton = $("#id-checkin")
+                var Checkin = function () {
+                    url = "/api/checkin/"
+                    data = {
+                        csrfmiddlewaretoken: 'lenOGJ6masasEYcX3LMo6Jt7l2fRwdqyzk0nbpXw8HroTQBqjt5GIeT92Hs6SbaN',
+                    }
+                    $.post(url, data, function (results) {
+                        info = results
+                        swal(info.title, info.subtitle, info.status)
+                        var box = $("#id-checkin-box")
+                        box.html('<p class="subtitle is-5 is-spaced">今天已经签到过了ಠ౪ಠ</p>')
+                    })
+                }
+                CheckButton.click(Checkin)
+
+                // 更换主题
+                var ThemeButton = $("#id-button-theme")
+                var changeTheme = function () {
+                    var theme = $("select[name=selects]").val();
+                    if (theme) {
+                        data = {
+                            theme: theme,
+                            csrfmiddlewaretoken: 'lenOGJ6masasEYcX3LMo6Jt7l2fRwdqyzk0nbpXw8HroTQBqjt5GIeT92Hs6SbaN',
+                        }
+                        url = "/api/change/theme/"
+                        $.post(url, data, function (results) {
+                            info = results
+                            swal(info.title, info.subtitle, info.status)
+                        })
+                    } else {
+                        swal('错误！', '请选择你要更换的主题', 'error')
+                    }
+                }
+                ThemeButton.click(changeTheme)
+
+                // 更换加密方式
+                var MethodButton = $("#id-button-method")
+                var changeMethod = function () {
+                    var method = $("select[name=selects-method-types]").val();
+                    if (method) {
+                        data = {
+                            ss_method: method,
+                            csrfmiddlewaretoken: 'lenOGJ6masasEYcX3LMo6Jt7l2fRwdqyzk0nbpXw8HroTQBqjt5GIeT92Hs6SbaN',
+                        }
+                        url = "/api/user/settings/"
+                        $.post(url, data, function (results) {
+                            info = results
+                            swal(info.title, info.subtitle, info.status)
+                        })
+                    } else {
+                        swal('错误！', '请选择你要更换的加密类型', 'error')
+                    }
+                }
+                MethodButton.click(changeMethod)
+                // 更换密码
+                var PasswordButton = $("#id-button-password")
+                var changePassword = function () {
+                    var password = $("#id-password").val();
+                    if (password) {
+                        data = {
+                            ss_password: password,
+                            csrfmiddlewaretoken: 'lenOGJ6masasEYcX3LMo6Jt7l2fRwdqyzk0nbpXw8HroTQBqjt5GIeT92Hs6SbaN',
+                        }
+                        url = "/api/user/settings/"
+                        $.post(url, data, function (results) {
+                            info = results
+                            swal(info.title, info.subtitle, info.status)
+                        })
+                    } else {
+                        swal('错误！', '请输入SS密码', 'error')
+                    }
+                }
+                PasswordButton.click(changePassword)
+            </script>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="container">
+        <div class="content has-text-centered">
+            <p>
+            <p class="copyright">&copy; 2020·
+                <a href="/index">网站模板</a>
+
+            </p>
+            </p>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>

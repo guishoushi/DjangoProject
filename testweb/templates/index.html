@@ -1,21 +1,32 @@
 <!DOCTYPE html>
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>查询作业完成人数</title>
 
 </head>
-<body style="background: lightsteelblue">
-<form action="/index/" method="post">
-    <p>
-        <label for="username">账号：</label>
-        <input id="username" name="user" type="text"/>
-        <label for="password">密码：</label>
-        <input id="password" name="pwd" type="password"/>
-        {% csrf_token %}
-        <input type="submit" value="登录"/>
-    </p>
-</form>
+<body>
+<!--<img src="/static/小码君壁纸.jpg" style="height: 100%;width: 100%"/> -->
+<div style="text-align:center ">
+    <form action="/words_number/" method="post">
+        <p>
+            <label for="username">账号：</label>
+            <input id="username" name="user" type="text"/>
+
+        </p>
+        <p>
+            <label for="password">密码：</label>
+            <input id="password" name="pwd" type="password"/>
+            {% csrf_token %}
+        </p>
+        <p>
+            <input type="submit" value="登录"/>
+        </p>
+    </form>
+</div>
+
 
 <h1>{{form}}</h1>
 
@@ -30,7 +41,6 @@
 {% else %}
 <p>{{datetime.message}}</p>
 {% endif %}
-<p align="center"><a href="/homeword" style="font-size: 40px;"> 陈泽南作业跳转！</a></p>
 
 
 </body>

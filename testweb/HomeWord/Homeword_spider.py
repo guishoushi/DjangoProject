@@ -14,7 +14,7 @@ class HomeWord(object):
         self.login_url = "https://classroom-courseapi.xiaomawang.com/v1/user/login"
         self.data = {"username": username, "password": password}
         self.session = requests.Session()
-        self.headers = {"PermissionSetId": "360", "Access-Token": ""}
+        self.headers = {"PermissionSetId": "1724", "Access-Token": ""}
         self.class_info_dict = {}
         self.ok_homeword_number = 0
         self.json_info = {}
@@ -76,5 +76,5 @@ class HomeWord(object):
         return self.json_info
 
 
-zjh = HomeWord(12244, 124)
-class_list = zjh.login()
+# zjh = HomeWord(12246, "zten880F")
+# class_list = zjh.login()
